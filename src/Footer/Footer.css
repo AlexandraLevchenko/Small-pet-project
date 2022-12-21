@@ -1,0 +1,14 @@
+
+.Footer-board-footer {
+    margin-top: 20px;
+    /* padding: 20px; */
+    background-color: bisque;
+    grid-area: footer;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

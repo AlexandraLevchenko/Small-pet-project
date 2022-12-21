@@ -1,0 +1,25 @@
+.Field {
+background-color:rgb(247, 163, 153);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 24px;
+}
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.Field.active {
+    background-color: rgb(242, 90, 141);
+}
+
+.Field.active2 {
+    background-color:rgb(64, 105, 239);
+}

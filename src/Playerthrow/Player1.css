@@ -1,0 +1,15 @@
+.Player1{
+    border: 3px solid palevioletred;
+    background-color: pink;
+    border-radius: 50px;
+    /* margin-right: 10px; */
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: player;
+    
+    /* position: relative; */
+    /* grid-area: player; */
+}

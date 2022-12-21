@@ -1,0 +1,31 @@
+* {
+   font-family: 'Franklin Gothic Medium', sans-serif;
+   color: black; 
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+
+    "player board player2";
+    
+    grid-gap: 1px;
+    width: fit-content;
+    margin: 0 auto;
+        
+}
+
+.containerPlayer1 {
+    display: grid;
+    grid-template-areas: 
+    "player"
+    "throw";
+}
+
+.containerPlayer2{
+    display: grid;
+    grid-template-areas: 
+    "player2"
+    "throw2";
+   
+}
