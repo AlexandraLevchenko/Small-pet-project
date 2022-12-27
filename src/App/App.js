@@ -84,7 +84,7 @@ const initialFields = [
   },
   {
     id: "position14",
-    label: "back",
+    label: "back 1",
     color: "purple",
   },
   {
@@ -134,8 +134,8 @@ const initialFields = [
   },
   {
     id: "position24",
-    label: "25",
-    color: "default",
+    label: "forward 2",
+    color: "orange",
   },
   {
     id: "position25",
@@ -227,12 +227,20 @@ function App() {
     const random = getRandomNumber();
       context.throwCube(random);
     setPlayer1CurrentPosition((currentPosition) => {
-      
+
       const currentSum = currentPosition + random;
       if (currentSum === 35) {
         return 35;
       }
-      
+
+      if (currentSum === 14) {
+        return currentSum - 1;
+      }
+
+      if (currentSum === 24) {
+        return currentSum + 2;
+      }
+
       return currentSum;
     });
   };
@@ -249,9 +257,14 @@ function App() {
       if (currentSum === 35) {
         return 35;
       }
-      // if (currentSum > 35) {
-      //   return 0;
-      // }
+      if (currentSum === 14) {
+        return currentSum - 1;
+      }
+      
+      if (currentSum === 24) {
+        return currentSum + 2;
+      }
+
       return currentSum;
       
     });

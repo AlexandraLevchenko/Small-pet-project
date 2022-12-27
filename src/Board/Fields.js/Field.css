@@ -27,3 +27,9 @@ background-color:rgb(247, 163, 153);
 .purple {
     background-color: purple;
 }
+
+.orange {
+    background-color: orange;
+  font-size: 22px;
+  text-align: center;
+}
