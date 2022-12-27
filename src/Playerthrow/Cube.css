@@ -1,0 +1,12 @@
+.Cube{
+    border: 3px solid rgb(0, 0, 0);
+    width:100px;
+    height:100px;
+    /* background:blue; */
+    display:flex;
+    margin: 0 auto;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}

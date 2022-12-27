@@ -1,8 +1,14 @@
 import "./Throw.css"
 
-function Throw({handleScore}){
+function Throw({handleScore, disabled}){
     return(
-        <div className="Throw" onClick={handleScore}>Throw</div>
+        <button 
+        className="Throw" 
+        onClick={handleScore} 
+        disabled={disabled}
+        >
+           {disabled?"wait for 2 player": "Throw"}
+            </button>
     )
 }
 

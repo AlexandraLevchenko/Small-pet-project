@@ -5,8 +5,11 @@ import "./App.css";
 import Player2 from "../Playerthrow2/Player2";
 import Throw2 from "../Playerthrow2/Throw2";
 import Field from "../Board/Fields.js/Field";
+import Cube from "../Playerthrow/Cube";
 import { getScore, getRandomNumber } from "../helpers/helper";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import CubeContext from "../context/cubeContext";
+
 
 const initialFields = [
   {
@@ -81,8 +84,8 @@ const initialFields = [
   },
   {
     id: "position14",
-    label: "15",
-    color: "default",
+    label: "back",
+    color: "purple",
   },
   {
     id: "position15",
@@ -192,51 +195,65 @@ const initialFields = [
 ];
 
 function App() {
+  const [playerToGo, setPlayerToGo] = useState(1);
+
   const [player1CurrentPosition, setPlayer1CurrentPosition] = useState(0);
+  const context = useContext(CubeContext);
   useEffect(() => {
     if (player1CurrentPosition >= 35) {
-      alert("Player 1 win!");
+      alert("Player 1 wins!");
+      setPlayer1CurrentPosition(0);
+      setPlayer2CurrentPosition(0);
     }
   }, [player1CurrentPosition]);
 
+
+
+
+
+
   const [player2CurrentPosition, setPlayer2CurrentPosition] = useState(0);
   useEffect(() => {
-    if (player2CurrentPosition >= 35) {
-      alert("Player 2 win!");
-    }
+  
+      if  (player2CurrentPosition >= 35) {
+        alert("Player 2 win!");
+        setPlayer2CurrentPosition(0);
+        setPlayer1CurrentPosition(0);
+      }
   }, [player2CurrentPosition]);
 
   const handleScoreNew = () => {
+    setPlayerToGo(2);
+    const random = getRandomNumber();
+      context.throwCube(random);
     setPlayer1CurrentPosition((currentPosition) => {
-      console.log("ONE", currentPosition);
-      // if (currentPosition > 35) {
-      //   return 0;
-      // }
-      console.log("TWO", currentPosition);
-      // alert(getRandomNumber(1,6))
-      const currentSum = currentPosition + getRandomNumber();
+      
+      const currentSum = currentPosition + random;
       if (currentSum === 35) {
         return 35;
       }
-      if (currentSum > 35) {
-        return 0;
-      }
+      
       return currentSum;
     });
   };
 
+  
+
   const handleScoreNew2 = () => {
+    setPlayerToGo(1);
+    const random2 = getRandomNumber();
+    context.throwCube(random2);
     setPlayer2CurrentPosition((currentPosition2) => {
-      console.log("ONEONE", currentPosition2);
-      console.log("TWOTWO", currentPosition2);
-      const currentSum = currentPosition2 + getRandomNumber();
+    
+      const currentSum = currentPosition2 + random2;
       if (currentSum === 35) {
         return 35;
       }
-      if (currentSum > 35) {
-        return 0;
-      }
+      // if (currentSum > 35) {
+      //   return 0;
+      // }
       return currentSum;
+      
     });
   };
 
@@ -244,7 +261,9 @@ function App() {
     <div className="container">
       <div className="containerPlayer1">
         <Player1 />
-        <Throw handleScore={handleScoreNew} />
+        <Cube/>
+        
+        <Throw handleScore={handleScoreNew} disabled={playerToGo === 2}/>
       </div>
 
       <Board>
@@ -262,7 +281,7 @@ function App() {
 
       <div className="containerPlayer2">
         <Player2 />
-        <Throw2 handleScore={handleScoreNew2} />
+        <Throw2 handleScore={handleScoreNew2} disabled={playerToGo === 1}/>
       </div>
     </div>
   );

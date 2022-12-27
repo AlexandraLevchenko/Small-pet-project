@@ -9,7 +9,5 @@
     justify-content: center;
     align-items: center;
     grid-area: player;
-    
-    /* position: relative; */
-    /* grid-area: player; */
+    margin: 0 auto;
 }

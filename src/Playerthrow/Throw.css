@@ -7,7 +7,8 @@
     position: relative;
     border: 3px solid #000000;
     border-radius: 20px;
-    margin-top: 300px;
+    /* margin-top: 160px; */
+    margin: 0 auto;
     
     
 }

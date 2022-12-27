@@ -23,3 +23,7 @@ background-color:rgb(247, 163, 153);
 .Field.active2 {
     background-color:rgb(64, 105, 239);
 }
+
+.purple {
+    background-color: purple;
+}
