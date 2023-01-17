@@ -1,13 +1,16 @@
+import { useState } from "react";
 import "./Throw.css"
 
-function Throw({handleScore, disabled}){
+function Throw({handleScore, playerToGo}){
+  const [isHovered, setIsHovered] = useState(false);
     return(
         <button 
-        className="Throw" 
+        className={`Throw ${playerToGo === 2 && "Throw2"}`}  
         onClick={handleScore} 
-        disabled={disabled}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         >
-           {disabled?"wait for 2 player": "Throw"}
+           {isHovered ? "Throw" : playerToGo === 1 ? "Player1" : "Player2"}
             </button>
     )
 }

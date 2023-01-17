@@ -1,9 +1,9 @@
 import "./Player1.css"
 
-function Player1(){
+function Player1({label, isFirstPlayer}){
     return(
-        <div className="Player1">
-         <p>Player 1</p>
+        <div className={isFirstPlayer? `Player1` : `Player2`}>
+         <p>{label}</p>
         </div>
        
     )

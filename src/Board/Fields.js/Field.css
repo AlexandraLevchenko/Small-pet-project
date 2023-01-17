@@ -7,6 +7,7 @@ background-color:rgb(247, 163, 153);
     align-items: center;
     margin: 5px;
     font-size: 24px;
+    /* background-image: url("pictures/yoshi.png"); */
 }
 .red {
     background-color: red;

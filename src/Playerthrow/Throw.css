@@ -30,3 +30,24 @@
     overflow: hidden;
     z-index: 1;
 }
+
+
+
+
+.Throw2:hover {
+    display: flex;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    /* padding: 12px 30px; */
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', Тahoma, sans-serif;
+    background: #2535e9;
+    cursor: pointer;
+    border: 2px solid #BFE2FF;
+    overflow: hidden;
+    z-index: 1;
+}
